@@ -13,7 +13,7 @@ Using the Application: -> Home Page: Displays options to add a student or view t
 
 After successfully completion of above setup steps.Run the application using tomcat server and acess web application the first page contains Login Form.
 Login credentials -
- UserName:"student" 
+ UserName:"admin" 
  Password -"12345" 
 
  After Successfull login you redirect to Home page containing List of Students ,Delete and Edit option and a button to Add Student details and View all Students option. 
