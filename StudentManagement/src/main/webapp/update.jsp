@@ -41,10 +41,24 @@
         .header p {
             color: #6c757d;
         }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #007bff; /* Button color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
+     <a href="ReadServlet" class="back-button">Back</a>
     <div class="container">
+    
         <div class="header">
             <h2>Update Student</h2>
             <p>Updating details for student ID: <strong><%= Integer.parseInt(request.getParameter("id")) %></strong></p>

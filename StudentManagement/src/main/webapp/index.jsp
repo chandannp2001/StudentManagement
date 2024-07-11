@@ -1,50 +1,60 @@
-<%@ page import="java.util.List" %>
-<%@ page import="com.student.Model.Student" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Add Student</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .container {
-            margin-top: 50px;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
         }
-        .form-container {
-            width: 50%;
-            margin: 0 auto;
+        .login-container {
+            width: 300px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
         }
-        .btn {
-            margin-top: 10px;
+        .login-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .login-container p {
+            margin-bottom: 0px;
+            text-align: center;
+            color: red;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <h2>Add Student</h2>
-            <form action="CreateServlet" method="post">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="age">Age:</label>
-                    <input type="number" class="form-control" id="age" name="age" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <hr>
-            <form action="ReadServlet" method="get">
-                <button type="submit" class="btn btn-secondary">View Students</button>
-            </form>
-        </div>
+    <div class="login-container">
+    <% String  errorMSG =(String)session.getAttribute("errorMSG");
+       if(errorMSG!=null){
+    	   %>
+    	   <p><%=errorMSG %></p>
+    	   <% 
+       }
+       session.setAttribute("errorMSG", null);
+       
+    %>
+        <h2>Login</h2>
+        <form action="Login" method="get">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

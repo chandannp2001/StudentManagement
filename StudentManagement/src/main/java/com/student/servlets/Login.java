@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Login")
 public class Login extends HttpServlet {
@@ -16,15 +17,18 @@ public class Login extends HttpServlet {
         // Collect parameters from the request
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        System.out.println(username+password);
         
-        if(username.equals("c")&& password.equals("12345")) {
+        HttpSession session = request.getSession();
         
-        request.getRequestDispatcher("/ReadServlet").forward(request, response);
-        return;
+        
+        if(username.equals("admin")&& password.equals("12345")) {
+        
+            request.getRequestDispatcher("/ReadServlet").forward(request, response);
+            return;
         }else {
-        request.getRequestDispatcher("/ReadServlet").forward(request, response);
-        return;
+        	session.setAttribute("errorMSG", "Invalid Credentials! Try again ");
+            request.getRequestDispatcher("index.jsp").include(request, response);
+            return;
         }
      }
 }

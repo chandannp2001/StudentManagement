@@ -15,17 +15,17 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background-color:  #007bff;
+            background-color: #007bff;
         }
         .navbar a {
             color: white;
         }
         .table {
             margin-top: 20px;
-            background-color: #f9f9f9; /* Changed background color */
+            background-color: #f9f9f9;
         }
         .table th {
-            background-color: #4CAF50; /* Changed header background color */
+            background-color: #4CAF50;
             color: white;
         }
         .table td {
@@ -35,11 +35,11 @@
             margin-right: 5px;
         }
         .btn-warning {
-            background-color: #ffcc00; /* Changed color for Edit button */
+            background-color: #ffcc00;
             border-color: #ffcc00;
         }
         .btn-danger {
-            background-color: #e60000; /* Changed color for Delete button */
+            background-color: #e60000;
             border-color: #e60000;
         }
         .btn-outline-success {
@@ -77,6 +77,7 @@
                 </select>
                 <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search" aria-label="Search" required>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <a href="logout" class="btn btn-outline-danger my-2 my-sm-0 ml-2">Logout</a> <!-- Added logout button -->
             </form>
         </div>
     </nav>

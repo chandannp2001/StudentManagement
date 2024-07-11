@@ -13,14 +13,27 @@
             border: 1px solid #ddd;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
+            background-color: #f0f0f0; /* Updated background color */
         }
         .form-header {
             margin-bottom: 20px;
         }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #007bff; /* Button color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
+    <a href="ReadServlet" class="back-button">Back</a> <!-- Add this line for the back button -->
     <div class="container">
         <div class="form-container mx-auto">
             <h2 class="form-header text-center">Add New Student</h2>
