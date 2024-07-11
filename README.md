@@ -7,7 +7,7 @@ Change the database details like url,username, password according to yours datab
 How to Run
 Deploy the application: -> Deploy the application on the Apache Tomcat server.
 
-Access the application: -> Open a web browser and go to http://localhost:8080/.
+Access the application: -> Open a web browser and go to http://localhost:8080/StudentManagement/.
 
 Using the Application: -> Home Page: Displays options to add a student or view the student list. -> Add Student: Fill in the student details and submit the form to add a new student. ->View Students: Displays all students. Options are available to update or delete each student. ->Search Students: Use the search bar to find students by ID, name, email, or age.
 
@@ -26,7 +26,7 @@ Login credentials -
  2)  View All Students: When a user clicks the "View  All Students" button, the request is sent to the ReadServlet. ReadServlet retrieves the list of students from the database using StudentDAOImpl and sets this list as a request attribute. The user is forwarded to home.jsp, which displays the list of students.
    
  3)  Update Student: When a user clicks the "Edit" button next to a student, they are redirected to an update form (update.jsp). After updating the details and submitting the form, the data is sent to the UpdateServlet. UpdateServlet updates the student details in the database and redirects back to home.jsp with a success message.
-      
+    
  4)  Delete Student: When a user clicks the "Delete" button next to a student, a confirmation pop-up appears. Upon confirmation, the request is sent to the DeleteServlet. DeleteServlet deletes the student from the database and redirects back to home.jsp with a success message.
       
  5)  Search Students: Users can search for students using the search bar on the home page. The search form sends the search parameters to the SearchServlet. SearchServlet retrieves the matching students from the database and forwards the list to home.jsp for display.
